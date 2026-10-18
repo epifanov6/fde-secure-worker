@@ -1,0 +1,12 @@
+[Unit]
+Description=Cloudflare Origin App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/opt/cloudflare-origin
+ExecStart=/usr/bin/python3 /opt/cloudflare-origin/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
